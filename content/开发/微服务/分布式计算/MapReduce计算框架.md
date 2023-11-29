@@ -8,19 +8,17 @@ MapReduce 擅长处理大数据，其思想就是“分而治之”。
 
 **Reducer负责对map阶段的结果进行汇总**。
 
-![[058a0b1cd93ad9afbf1edf2bec2b98ce_MD5.jpeg|400]]
-
 MapReduce 的整个工作过程如上图所示，它包含如下4个独立的实体：
 　　实体一：客户端，用来提交 MapReduce 作业。
 　　实体二：JobTracker，用来协调作业的运行。
 　　实体三：TaskTracker，用来处理作业划分后的任务，即真正的计算部分。
 　　实体四：HDFS，用来在其它实体间共享作业文件。
 
-![[844f650ca25f202eda340a2aede1dee3_MD5.jpeg|500]]
+![[attachments/9157e14c4c447ecaa0972f865a663a95_MD5.jpeg|600]]
 
 ### MapReduce 的局限
 
-![[e1c3fb5c855e2debe52634bb4258eef4_MD5.jpeg|500]]
+![[attachments/b8b3f19a9bfb6042a10345ec38e7cf41_MD5.jpeg|600]]
 
 MapReduce 是一个为批量处理而设计的模型，从任务的启动延迟性、中间结果的落盘的特点不难看出，采用这一计算模型的系统，都具有时延较高的特点，在那些对时延非常敏感的系统中不宜采用。**也就是说 MapReduce 比较适合那些超大数据量的计算，不适合轻量级计算**。
 
