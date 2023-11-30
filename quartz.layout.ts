@@ -27,7 +27,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
     Component.DesktopOnly(Component.Explorer()),
-    Component.RecentNotes({ title: "Recent writing" }),
+    // Component.RecentNotes({ title: "Recent writing" }),
   ],
   right: [
     Component.Graph(),
@@ -45,7 +45,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
     Component.DesktopOnly(Component.Explorer()),
-    Component.RecentNotes({ title: "Recent writing" }),
+    // Component.RecentNotes({ title: "Recent writing" }),
   ],
   right: [],
 }
