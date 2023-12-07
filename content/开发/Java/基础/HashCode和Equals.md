@@ -43,13 +43,14 @@ public V put(K key, V value) {
 
 之所以**hashCode相等，却可以equal不等**，就比如ObjectA和ObjectB他们都有属性name，那么hashCode都以name计算，所以hashCode一样，但是两个对象属于不同类型，所以equals为false
 
-**为什么需要hashCode?**
+###  为什么需要hashCode?
 
 - 通过hashCode可以很快的查到小内存块。
 - 通过hashCode比较比equals方法快，当get时先比较hashCode，如果hashCode不同，直接返回false
 
-**为什么重写equals 一定需要重写hashcode ？**
+### 为什么重写equals 一定需要重写hashcode ？
 
-hashCode()和equals()一样都是基本类Object里的方法，而和equals()一样，Object里hashCode()里面只是返回当前对象的地址的哈希值，如果是这样的话，那么我们相同的一个类，new两个对象，由于他们在内存里的地址不同，则他们的hashCode（）不同，导致equals相等，但是hashcode不相等的情况出现。
+hashCode()和equals()一样都是基本类Object里的方法，而和equals()一样，**Object里hashCode()计算和内存地址无关**， [[../JVM/JVM HashCode 和 内存地址的关系|JVM HashCode 和 内存地址的关系]] 
+如果是这样的话，那么我们相同的一个类，new两个对象，由于他们在内存里的地址不同，则他们的hashCode（）不同，导致equals相等，但是hashcode不相等的情况出现。
 
 所以这显然不是我们想要的，所以我们必须重写我们类的hashCode()方法，即一个类，在hashCode()里面返回唯一的一个hash值

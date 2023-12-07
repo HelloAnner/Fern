@@ -78,11 +78,11 @@ public T get() {
 ```
 
 
-### 内存泄露问题 - value 导致的
+### 内存泄露问题 
 
 **突然我们ThreadLocal是null了，也就是要被垃圾回收器回收了，但是此时我们的ThreadLocalMap（thread 的内部属性）生命周期和Thread的一样，它不会回收，这时候就出现了一个现象。那就是ThreadLocalMap的key没了，但是value还在，所以 value 就永远无法回收,这就造成了内存泄漏**
 
-解决办法：使用完`ThreadLocal`后，执行`remove`操作，避免出现内存溢出情况。
+解决办法：使用完`ThreadLocal`后，执行`remove`操作，避免出现内存溢出情况。 或者初始值都是同一个引用。
 
 如果不`remove` 当前线程对应的`VALUE` ,就会一直存在这个值。
 
@@ -106,7 +106,7 @@ private void remove(ThreadLocal<?> key) {
 }
 ```
 
-### 为什么 Key 使用 弱引用 - key导致的
+### 为什么 Key 使用 弱引用
 
 如果使用强引用，当`ThreadLocal` 对象的引用（强引用）被回收了，`ThreadLocalMap`本身依然还持有`ThreadLocal`的强引用，如果没有手动删除这个key ,则`ThreadLocal`不会被回收，所以只要当前线程不消亡，`ThreadLocalMap`引用的那些对象就不会被回收， 可以认为这导致`Entry`内存泄漏。
 

@@ -69,5 +69,5 @@ utf8mb4_unicode_ci
 https://dev.mysql.com/doc/refman/8.0/en/charset-mysql.html
 
 
-- [ ] 复习 mysql编码规则
+- [ ] 复习 mysql编码规则(@2023-12-27 12:30)
 
