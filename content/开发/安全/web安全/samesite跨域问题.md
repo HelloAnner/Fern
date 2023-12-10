@@ -7,7 +7,7 @@
 
 前端： dataType 为  jsonp ， 使用 callback 方式
 后端：后端执行 callback ，将值返回给前端
-![[attachments/Pasted image 20231102180607.png|500]]
+![[Pasted image 20231102180607.png|500]]
 
 只支持 get 请求
 

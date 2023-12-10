@@ -27,7 +27,7 @@ docker run -d --privileged -p 10004:80 --name ldapAdmin --env PHPLDAPADMIN_HTTPS
 
 `容器通过DHCP获取一个与docker0同网段的IP地址，并默认连接到docker0网桥，以此实现容器与宿主机的网络互通`
 
-![[attachments/Pasted image 20231030190546.png|400]]
+![[Pasted image 20231030190546.png|400]]
 
 
 docker run -tid --name db -p 3306:3306 MySQL

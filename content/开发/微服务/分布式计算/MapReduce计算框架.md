@@ -14,7 +14,7 @@ MapReduce 的整个工作过程如上图所示，它包含如下4个独立的实
 　　实体三：TaskTracker，用来处理作业划分后的任务，即真正的计算部分。
 　　实体四：HDFS，用来在其它实体间共享作业文件。
 
-![[attachments/9157e14c4c447ecaa0972f865a663a95_MD5.jpeg|600]]
+![[9157e14c4c447ecaa0972f865a663a95_MD5.jpeg|600]]
 
 ### MapReduce 的局限
 

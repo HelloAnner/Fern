@@ -8,12 +8,12 @@ Exception类又分为运行时异常（Runtime Exception）和受检查的异常
 
 - 运行时异常;ArithmaticException,IllegalArgumentException，编译能通过，但是一运行就终止了，程序不会处理运行时异常，出现这类异常，程序会终止
 - 受检查的异常，要么用try。。。catch捕获，要么用throws字句声明抛出，交给它的父类处理，否则编译不会通过
-![[attachments/Pasted image 20231029180308.png]]
+![[Pasted image 20231029180308.png]]
 
 **建议使用非检查异常让代码更加简洁，而且更容易保持接口的稳定性。**
 
 ## **字节码层面分析异常处理**
-![[attachments/Pasted image 20231029180318.png]]
+![[Pasted image 20231029180318.png]]
 
 图片中的字节码是在 JDK 1.6 （class 文件的版本号为50，表示java编译器的版本为jdk 1.6）及之前的编译器生成的，因为有 jsr 和 ret 指令可以使用。然而在 idea 中通过 **jclasslib 插件** 查看 try-catch-finally 的字节码文件并没有 jsr/ret 指令，通过查阅资料，有如下说明：
 
@@ -136,7 +136,7 @@ throw MyException("my exception", e);
 - 业务异常：用户能够看懂并且能够处理的异常，比如用户没有登录，提示用户登录即可。
 - 系统异常：用户看不懂需要程序员处理的异常，比如网络连接超时，需要程序员排查相关问题。
 
-![[attachments/Pasted image 20231029180343.png]]
+![[Pasted image 20231029180343.png]]
 
 ## 参考
 

@@ -1,8 +1,8 @@
 ### 前文
 
-[[../../操作系统/操作系统并发线程映射模型|操作系统并发线程映射模型]]
+[[操作系统并发线程映射模型|操作系统并发线程映射模型]]
 
-[[../并发/Java线程模型|Java线程模型]]
+[[Java线程模型|Java线程模型]]
 
 ---
 
@@ -12,7 +12,7 @@
 
 为了解决串行调用的低性能问题，我们会考虑使用并行异步调用的方式，最简单的方式便是使用线程池 +Future 去并行调用。
 
-![[attachments/46e23eae65b994e4d667090f5ae4d7f4_MD5.jpeg]]
+![[46e23eae65b994e4d667090f5ae4d7f4_MD5.jpeg]]
 
 ```java
 ExecutorService executorService = Executors.newCachedThreadPool();  
@@ -67,7 +67,7 @@ CompletableFuture 是由 Java8 引入的，在 Java8 之前一般通过 Future �
 
 **虚拟线程(Virtual Thread)它不与特定的操作系统线程相绑定**。它在平台线程上运行 Java 代码，但在代码的整个生命周期内不独占平台线程。这意味着许多虚拟线程可以在同一个平台线程上运行他们的 Java 代码，共享同一个平台线程。同时虚拟线程的成本很低，虚拟线程的数量可以比平台线程的数量大得多
 
-![[attachments/3181b5c2a5d14b3dcebc854b6db30381_MD5.jpeg]]
+![[3181b5c2a5d14b3dcebc854b6db30381_MD5.jpeg]]
 
 ### VT 的创建
 ```java
@@ -119,7 +119,7 @@ JVM 把虚拟线程分配给平台线程的操作称为 **`mount（挂载）`**
 - **`mount 操作`**：虚拟线程挂载到平台线程，虚拟线程中包装的 Continuation 堆栈帧数据会被拷贝到平台线程的线程栈，这是一个从堆复制到栈的过程。即线程内的资源转移到了堆存储。
 - **`unmount 操作`**：虚拟线程从平台线程卸载，此时虚拟线程的任务还没有执行完成，所以虚拟线程中包装的 Continuation 栈数据帧会会留在堆内存中。
 
-![[attachments/9a8d7f211692490a8b12dca3cd600d50_MD5.jpeg]]
+![[9a8d7f211692490a8b12dca3cd600d50_MD5.jpeg]]
 
 上图中体现了多个 VT ，随着时间线中，会从载体线程依次让出。
 
@@ -277,7 +277,7 @@ VT 仅对非CPU密集场景使用，如果是CPU密集，会导致载体线程�
 - Thread-per-request (一请求一线程)风格的应用程序，例如主流的 Tomcat 线程模型或者基于类似线程模型实现的 SpringMVC 框架 ，这些应用只需要小小的改动就可以带来巨大的吞吐提升。
 
 ### 压测结论
-![[attachments/c6559539041abbe2a268b41ee4d663ce_MD5.jpeg]]
+![[c6559539041abbe2a268b41ee4d663ce_MD5.jpeg]]
 
 
 ## 参考

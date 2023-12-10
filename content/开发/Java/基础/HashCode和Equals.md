@@ -50,7 +50,7 @@ public V put(K key, V value) {
 
 ### 为什么重写equals 一定需要重写hashcode ？
 
-hashCode()和equals()一样都是基本类Object里的方法，而和equals()一样，**Object里hashCode()计算和内存地址无关**， [[../JVM/JVM HashCode 和 内存地址的关系|JVM HashCode 和 内存地址的关系]] 
+hashCode()和equals()一样都是基本类Object里的方法，而和equals()一样，**Object里hashCode()计算和内存地址无关**， [[JVM HashCode 和 内存地址的关系|JVM HashCode 和 内存地址的关系]] 
 如果是这样的话，那么我们相同的一个类，new两个对象，由于他们在内存里的地址不同，则他们的hashCode（）不同，导致equals相等，但是hashcode不相等的情况出现。
 
 所以这显然不是我们想要的，所以我们必须重写我们类的hashCode()方法，即一个类，在hashCode()里面返回唯一的一个hash值

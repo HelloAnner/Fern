@@ -1,4 +1,4 @@
-![[attachments/Pasted image 20231029180158.png]]
+![[Pasted image 20231029180158.png]]
 
 ### wait/notify/notifyAll方法的使用
 

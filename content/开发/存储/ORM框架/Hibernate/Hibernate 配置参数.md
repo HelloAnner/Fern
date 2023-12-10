@@ -2,7 +2,7 @@
 #Hibernate configure properties
 #Fri Dec 10 18:56:33 CST 2021
 # 数据库连接密码
-hibernate.connection.password=jdtJFF/XYT5ZRKSO5SzqBGtiggsOx2E2G1H81hb/Aazdp2VlcjKbt0zAhu3Obx0efbvSTSYJGFQM\nz+smBnRnS4yQBQI/p8FUqmQxRlloemaaH/p7J1bf65DflmmwfOSeeg9+zj4mLxTlQ7JdJL+9kVau\nf6wScqhxuNfpoFtBq++dxDnB7EwErGzOUI2zdVet5pe8rZAVamWQ08Hq0XG3q/47Km3bxEw/Bl9Q\nQsiZCIdVQjbyfU9iZKmUvrkvdQmwiHH7XxQRbkdHtjpGmlWj3gmDWBzwBwK21Z0yOD/yUTHmqBvS\neraVf7eB6HdovwdU8gA+KR9sP7sP8NWuylxreA\=\=
+hibernate.connection.password=
 # 连接池中连接的最大等待时间，当连接池中没有可用连接时，请求连接的线程将等待该时间后抛出异常，默认为 -1，表示无限等待
 hibernate.maxWait=500000
 # 连接池中连接最短空闲时间，单位为毫秒
@@ -52,7 +52,7 @@ hibernate.minIdle=0
 
 `hibernate.hbm2ddl.auto" value="update` will not modify a db column that has already been created.
 
-`hibernate.hbm2ddl.auto=update` 可能会更新数据库模式以保持与实体类定义的一致性，包括创建新表、添加新列、修改列的数据类型和约束等。它并不会删除已有的列或修改已经创建的列的长度
+`hibernate.hbm2ddl.auto=update` 可能会更新数据库模式以保持与实体类定义的一致性，包括创建**新表**、添加新列、修改列的数据类型和约束等。它**并不会删除已有的列或修改已经创建的列的长度**
 
 
 

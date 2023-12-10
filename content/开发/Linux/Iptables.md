@@ -20,7 +20,7 @@
 表（tables）提供特定的功能，iptables内置了4个表，即filter表、nat表、mangle表和raw表，分别用于实现包过滤，网络地址转换、包重构(修改)和数据跟踪处理。
 
 
-![[attachments/e1fc20cb2b3a72e299cf78a39126b944_MD5.jpeg|400]]
+![[e1fc20cb2b3a72e299cf78a39126b944_MD5.jpeg|400]]
 
 - filter表——三个链：INPUT、FORWARD、OUTPUT  作用：过滤数据包  内核模块：iptables_filter.
 - Nat表——三个链：PREROUTING、POSTROUTING、OUTPUT   作用：用于网络地址转换（IP、端口） 内核模块：iptable_nat
@@ -30,7 +30,7 @@
 Raw——mangle——nat——filter
 
 ### 数据包流向
-![[attachments/d45d7d5271dabd04e53b991472a3d18f_MD5.jpeg|400]]
+![[d45d7d5271dabd04e53b991472a3d18f_MD5.jpeg|400]]
 
 ① 当一个数据包进入网卡时，它首先进入PREROUTING链，内核根据数据包目的IP判断是否需要转送出去。
 

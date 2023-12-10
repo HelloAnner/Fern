@@ -42,7 +42,7 @@ service StreamingGreeter {
 ```
 
 流通信在java中是通过 StreamObserver 来实现的，逻辑比较简单：
-![[Pasted image 20231113194433.png|600]]
+![[attachments/Pasted image 20231113194433.png|600]]
 
 对于客户端往服务端发送的流，服务端实现observer接口，用于接收数据；客户端调用observer接口，用于发送数据。
 
@@ -51,10 +51,10 @@ service StreamingGreeter {
 以双向流传输模式为例，代码调用如下：
 
 服务端：
-![[Pasted image 20231113194449.png]]
+![[attachments/Pasted image 20231113194449.png]]
 
 客户端：
-![[Pasted image 20231113194500.png]]
+![[attachments/Pasted image 20231113194500.png]]
 
 逻辑很简单，但是代码看上去可能会有些奇怪，是因为在proto描述文件中我们定义的方法是：
 ```code
@@ -64,12 +64,12 @@ service StreamingGreeter {
 }
 ```
 
-![[Pasted image 20231113194558.png]]
+![[attachments/Pasted image 20231113194558.png]]
 
 这是由于gRPC支持很多语言，流式接口会针对每种编程语言生成最合适的形式，go语言中的格式跟java的就不一样，只需要按照生成代码的方法签名来实现和调用就行
 
 使用流式接口时，gRPC只支持异步模式，即 Observer 中的逻辑在一个特定的线程池执行。
-![[Pasted image 20231113194651.png|600]]
+![[attachments/Pasted image 20231113194651.png|600]]
 
 服务端与客户端有所不同，服务端的方法处理与后续的流消息处理都是在工作线程中串行执行；客户端发起方法调用与发送消息在主线程中执行（即调用方法的线程），而接收的流消息响应则与服务端一样在工作线程中串行执行。
 

@@ -137,7 +137,7 @@ if（jedis.set(key_resource_id, uni_request_id, "NX", "EX", 100s) == 1）{ //加
 ```
 在这里，**判断是不是当前线程加的锁**和**释放锁**不是一个原子操作。如果调用jedis.del()释放锁的时候，可能这把锁已经不属于当前客户端，会解除他人加的锁。
 问题的根源在于：锁的判断在客户端，释放在服务端，如下图：
-![[attachments/352b3bddaed0680189e781663daed7f3_MD5.jpeg]]
+![[352b3bddaed0680189e781663daed7f3_MD5.jpeg]]
 
 所以应该将锁的判断和删除都在 redis 服务端进行，可以借助 lua 脚本保证原子性，释放锁的核心逻辑【GET、判断、DEL】，写成 Lua 脚，让 Redis 执行，这样实现能保证这三步的原子性。
 
@@ -157,11 +157,11 @@ end;
 
 Redisson 框架中就实现了这个，就要 WatchDog（看门狗）:加锁时没有指定加锁时间时会启用 watchdog 机制，默认加锁 30 秒，每 10 秒钟检查一次，如果存在就重新设置过期时间为 30 秒（即 30 秒之后它就不再续期了）
 
-![[attachments/e5e11bf16e265e821734ca7b3bc22d6b_MD5.jpeg]]
+![[e5e11bf16e265e821734ca7b3bc22d6b_MD5.jpeg]]
 
 只要线程一加锁成功，就会启动一个`watch dog`看门狗，它是一个后台线程，会每隔10秒检查一下，如果线程1还持有锁，那么就会不断的延长锁key的生存时间。因此，Redisson就是使用Redisson解决了**锁过期释放，业务没执行完**问题。
 
-![[attachments/642c337204348085d3794ddd8a21fe70_MD5.jpeg]]
+![[642c337204348085d3794ddd8a21fe70_MD5.jpeg]]
 
 ### 多机实现的分布式锁Redlock+Redisson
 
@@ -173,7 +173,7 @@ Redisson 框架中就实现了这个，就要 WatchDog（看门狗）:加锁时�
 
   >搞多个Redis master部署，以保证它们不会同时宕掉。并且这些master节点是完全相互独立的，相互之间不存在数据同步。同时，需要确保在这多个master实例上，是与在Redis单实例，使用相同方法来获取和释放锁。
   
-  ![[attachments/7dee094b4bbc07dfda5e27b3db1edc4f_MD5.jpeg|400]]
+  ![[7dee094b4bbc07dfda5e27b3db1edc4f_MD5.jpeg|400]]
 RedLock的实现步骤:如下
 
 > - 1.获取当前时间，以毫秒为单位。
