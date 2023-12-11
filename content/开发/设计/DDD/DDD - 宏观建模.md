@@ -17,14 +17,14 @@
 
 - 不关心技术逻辑，而是只关心业务
     
- ![[Pasted image 20231027151457.png|300]]
+ ![[attachments/Pasted image 20231027151457.png|300]]
     
 
 复杂度 - 横切 、 纵切
 
 横切 - 按照分层：用户接口层、应用层、领域层、基础设施层
 
-![[Pasted image 20231027151519.png|120]]
+![[attachments/Pasted image 20231027151519.png|120]]
 
 纵切 - 业务上 划分
 
@@ -37,12 +37,12 @@
 分而治之 - HTML 、 CSS 、JS
 
 ## 通用语言 - 沟通的标准
-![[Pasted image 20231027151547.png|400]]
+![[attachments/Pasted image 20231027151547.png|400]]
 
 客户的需求可能是明确清晰的，也可能是一个想法、需要一起交流才可以确定；
 
 基本上，行业内客户基本都是清晰的、创业的客户基本都是一个想法。
-![[Pasted image 20231027152134.png|400]]
+![[attachments/Pasted image 20231027152134.png|400]]
 通用语言：消除领域专家和开发者之间的沟通失调
 
 - 准确、高效、通用
@@ -52,7 +52,7 @@
 领域术语：需要明白一个行业的内部黑话
 
 - 强调动词的准确性
-![[Pasted image 20231027152150.png|400]]
+![[attachments/Pasted image 20231027152150.png|400]]
 避免：
 
 同名的业务词汇和实际业务关系不清楚
@@ -81,27 +81,27 @@
     
 - “高端客户优惠” 例子
     
-    ![[Pasted image 20231027152210.png|400]]
-    ![[Pasted image 20231027152223.png|400]]
+    ![[attachments/Pasted image 20231027152210.png|400]]
+    ![[attachments/Pasted image 20231027152223.png|400]]
 
 最好是在团队中形成一个相对固定的场景分析模式：
 
 - 用例图 use case
     
     文字描述
-    ![[Pasted image 20231027152523.png|400]]
+    ![[attachments/Pasted image 20231027152523.png|400]]
     
     图描述 - 这里看一下 include 说明子部分 ， extend 说明条件扩展部分
     
-    ![[Pasted image 20231027152538.png|400]]
+    ![[attachments/Pasted image 20231027152538.png|400]]
 - 用户故事 - use store
     
     文字描述 + 验收标准
-    ![[Pasted image 20231027152557.png|400]]
+    ![[attachments/Pasted image 20231027152557.png|400]]
     
     用户故事卡 - 短信验证码的例子 - 术语 + 用例
     
-    ![[Pasted image 20231027152611.png|400]]
+    ![[attachments/Pasted image 20231027152611.png|400]]
     
 - 测试驱动开发 - test drive development
     
@@ -111,13 +111,13 @@
     
     以一个失败的测试为起点，逐步修复，完成这个单元测试
     
-    ![[Pasted image 20231027152623.png|400]]
+    ![[attachments/Pasted image 20231027152623.png|400]]
     
 
 ## 领域
 
 领域 - 问题的范围
-![[Pasted image 20231027153019.png|200]]
+![[attachments/Pasted image 20231027153019.png|200]]
 
 子域：
 
@@ -131,7 +131,7 @@
 - 上下文 Context
 
 动态的业务流程会在边界上进行上下文切换
-![[Pasted image 20231027153044.png|400]]
+![[attachments/Pasted image 20231027153044.png|400]]
 
 不同的上下文中，相同的名词的含义可能完全不同。
 
@@ -139,7 +139,7 @@
 
 上下文可以区分业务，即可以使用多个表完成业务，而不是一个超大的宽表
 
-![[Pasted image 20231027153059.png|400]]
+![[attachments/Pasted image 20231027153059.png|400]]
 
 界限上下文就是微服务类型的一个指导思想。
 
@@ -160,32 +160,32 @@
 上游 U：依赖发起方
 
 下游 D： 依赖上游
-![[Pasted image 20231027153121.png|400]]
+![[attachments/Pasted image 20231027153121.png|400]]
 团队协作模式：
 
 - 合作关系
     
     演化初期的关系，同生共死 ， 不是一个很好的协作关系
     
-    ![[Pasted image 20231027153143.png|400]]
+    ![[attachments/Pasted image 20231027153143.png|400]]
     
-    ![[Pasted image 20231027153159.png|400]]
+    ![[attachments/Pasted image 20231027153159.png|400]]
     
 - 共享内核
     
-    ![[Pasted image 20231027154858.png|400]]
+    ![[attachments/Pasted image 20231027154858.png|400]]
     
 - 消费供应 - 比较不错 C-S
     
-    ![[Pasted image 20231027154922.png|400]]
+    ![[attachments/Pasted image 20231027154922.png|400]]
     
 - 遵奉者 Conformist
     
     消费供应的反模式
-    ![[Pasted image 20231027154939.png|400]]
+    ![[attachments/Pasted image 20231027154939.png|400]]
     
 - 另谋他路
-    ![[Pasted image 20231027154953.png|400]]
+    ![[attachments/Pasted image 20231027154953.png|400]]
     
 
 代码上的上下文关系模式：
@@ -194,20 +194,20 @@
     
     OCP 的思想设计
     
-    ![[Pasted image 20231027155013.png|400]]
+    ![[attachments/Pasted image 20231027155013.png|400]]
     
 - 开放主机服务 - OHS
     
     PL - 发布语言，一般结合使用
     
-    ![[Pasted image 20231027155024.png|400]]
+    ![[attachments/Pasted image 20231027155024.png|400]]
     
     上游避免下游的多样性的设计
     
 - 发布-订阅事件
     
-    ![[Pasted image 20231027155032.png|400]]
-    ![[Pasted image 20231027155041.png|400]]
+    ![[attachments/Pasted image 20231027155032.png|400]]
+    ![[attachments/Pasted image 20231027155041.png|400]]
     
     吞吐量高、解耦
     
@@ -215,11 +215,11 @@
     
     如果失败了，基于消息的失败之后，可以基于 SAGA 完成，即基于补偿消息
     
-![[Pasted image 20231027155059.png|400]]
+![[attachments/Pasted image 20231027155059.png|400]]
 ## 架构
 
 宏观建模和微观建模衔接的部分
-![[Pasted image 20231027155115.png|400]]
+![[attachments/Pasted image 20231027155115.png|400]]
 右侧的 DDD 分层设计中 ， Application Layer 的作用是什么？
 
 编排业务逻辑：
@@ -230,28 +230,28 @@
 ### DDD 分层
 
 现在看看贫血模型：
-![[Pasted image 20231027155126.png|400]]
+![[attachments/Pasted image 20231027155126.png|400]]
 Service 里面承担了所有的逻辑；
 
 要求调用方是一个“全能型”选手，必须知道所有的业务逻辑；
 
 技术和业务相分离：
 
-![[Pasted image 20231027155140.png|400]]
+![[attachments/Pasted image 20231027155140.png|400]]
 
 同时支持输入的多样性
-![[Pasted image 20231027155154.png|400]]
+![[attachments/Pasted image 20231027155154.png|400]]
 
 综上，一个DDD分层会去这样设计：
-![[Pasted image 20231027155207.png|450]]
+![[attachments/Pasted image 20231027155207.png|450]]
 ### 六边形架构 - 整洁架构
 ![[Pasted image 20231027155225.png|400]]
 按照业务逻辑转一圈，实现一个三色同心圆 ，即一个多层的架构
 
 业务的边界全部是接口，由接口定义好，实现技术和业务分离 ， 整体符合 DIP 原则
-![[Pasted image 20231027155238.png|400]]
+![[attachments/Pasted image 20231027155238.png|400]]
 即依赖注入，技术使用接口挂接进去了
-![[Pasted image 20231027155247.png|400]]
+![[attachments/Pasted image 20231027155247.png|400]]
 ### 微服务架构
 
 - 微服务使用界限上下文划分
@@ -262,7 +262,7 @@ Service 里面承担了所有的逻辑；
 写模型 和 读模型分离
 
 写的时候可以写窄表，读的时候可以使用宽表
-![[Pasted image 20231027155256.png|400]]
+![[attachments/Pasted image 20231027155256.png|400]]
 读和写模型可以使用消息等等完成通信；
 
 可能不同的界限上下文可以使用的架构完成。
