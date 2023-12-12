@@ -43,3 +43,4 @@ H(black header) <= target
 
 比特币系统一半是对message取hash ，然后对hash内容进行签名。
 
+#web3
