@@ -9,3 +9,4 @@ done
 
 cd /Users/anner/Fern && npx quartz sync && cd -
 ```
+

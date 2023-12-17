@@ -42,6 +42,10 @@ cmd + shift + s 格式化md格式
 - [x] Auto Link Title ： 粘贴链接的时候自动抓取网页的标题，填充为文字 - 与 Paste URL into Selection  不兼容，但是可以选择在 cmd + z 一下就可以了
 - [x] Markdown Prettifier ： 统一 markdown 格式 
 
+### 功能
+
+callout ： [callout标注块 | obsidian文档咖啡豆版](https://coffeetea.top/zh/markdown/callout.html)
+
 ### 思考
 
 目录存在 what 类型的文件 ， 标签标注 how 类型 (how 可能存在多个特性)
