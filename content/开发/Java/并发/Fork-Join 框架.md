@@ -106,6 +106,8 @@ public class ParallelSumComputationUsingForkJoin {
 
 ```
 
+让leftSumTask进行fork()操作，这意味着它被添加到工作窃取队列中，在ForkJoinPool队列中的任何线程都可以拾取并执行它。关于工作窃取机制在后文进行详细阐述
+
 
 ## Fork-Join 原理
 
@@ -146,6 +148,10 @@ public class ParallelSumComputationUsingForkJoin {
 |fork-join 非常适合递归问题，其中任务涉及运行子任务，然后处理其结果。|如果使用 ExecutorService 解决此类递归问题，则最终会导致线程被捆绑，等待其他线程向它们传递结果。|
 |Fork Join 是 ExecuterService 的实现。主要区别在于，此实现创建了一个 DEQUE 工作线程池。|Executor 服务创建请求数量的线程，并应用阻塞队列来存储所有剩余的等待任务。|
 
+
+```
+
+```
 
 ## 并行流
 
@@ -191,13 +197,40 @@ public long printSum(long i, long j) {
 
 ###  Demo
 
+```java
+public class ParallelSumStream {
 
 
+    public static void main(String[] args) {
+        LongStream.range(1L, 100L)
+                .parallel()
+                .peek(ParallelSumStream::printThreadName)
+                .reduce(ParallelSumStream::printSum);
+    }
+
+
+    public static void printThreadName(long l) {
+        String tName = Thread.currentThread().getName();
+        System.out.println(tName + " offers:" + l);
+    }
+
+
+    public static long printSum (long i , long j ) {
+        long sum = i + j;
+        System.out.printf(
+                "%s has: %d; plus: %d; result: %d\n",
+                Thread.currentThread().getName(), i, j, sum
+        );
+        return sum;
+    }
+}
+```
 
 
 ## 业务实践
 
 
+
 ## 参考
 
-https://mp.weixin.qq.com/s/wPoMlevdB5lEHVQKERPNDw
+[mp.weixin.qq.com/s/wPoMlevdB5lEHVQKERPNDw](https://mp.weixin.qq.com/s/wPoMlevdB5lEHVQKERPNDw)
