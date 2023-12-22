@@ -41,7 +41,6 @@ hibernate.maxActive=50
 hibernate.minIdle=0
 ```
 
-
 ### hibernate.hbm2ddl.auto
 
 `hibernate.hbm2ddl.auto" value="update` won't modify existing table column definitions. Doing some testing I found that:

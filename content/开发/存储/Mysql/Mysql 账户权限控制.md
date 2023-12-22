@@ -51,7 +51,11 @@ show grants for kelly@'%';
 ```sql
 CREATE USER 'bnner'@'%' IDENTIFIED BY '1111';
 
+# DML
 GRANT SELECT, INSERT, UPDATE, DELETE ON *.* TO 'bnner'@'%';
+
+# DDL
+GRANT CREATE, ALTER, DROP, INDEX ON *.* TO `anner`@`%`;
 
 FLUSH PRIVILEGES;
 ```

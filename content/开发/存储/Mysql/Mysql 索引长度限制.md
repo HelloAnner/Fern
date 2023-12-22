@@ -8,3 +8,4 @@ url: "https://blog.csdn.net/xubingtao/article/details/123824946"
 utf-8编码一个字符会占用3个字节，而utf8mb4编码一个字符会占用4个字节
 
 在开启INNODB_LARGE_PREFIX参数时，索引键前缀限制变为3072字节
+

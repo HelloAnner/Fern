@@ -96,6 +96,7 @@ information_schema.processlist 关于**当前活动连接的详细信息**，包
 ```sql
 show full processlist;
 ```
+![[attachments/9ce8c9162d026058c1ca63a2a6566af7_MD5.jpeg]]
 
 
 ```sql
@@ -108,6 +109,7 @@ show status like "%connect%";
 - `Threads_created`：已创建的线程数。
 - `Threads_running`：正在运行的线程数
 查看当前状态的连接信息
+![[attachments/49d188603610c8bb44acadbf12247600_MD5.jpeg]]
 
 ### Thread
 

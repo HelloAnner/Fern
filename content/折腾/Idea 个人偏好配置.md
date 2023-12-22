@@ -1,6 +1,6 @@
 
-| 主题 | Github Dark |
+| 主题 | Github Theme |
 | ---- | ----------- |
-|   字体   |   menlo          |
+|   字体   |  Jetbrains Molo          |
 
 

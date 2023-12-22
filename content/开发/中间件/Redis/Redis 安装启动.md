@@ -1,5 +1,5 @@
 
-按照配置文件启动
+按照配置文件启动 , 也可以使用 docker 启动 [[../../环境/Docker环境/Docker 安装 Redis|Docker 安装 Redis]]
 ```shell
 redis-server /home/anner/redis-4.0.9/redis.conf
 ```
@@ -18,4 +18,5 @@ auth redispassword
 
 ./redis-cli -h 127.0.0.1 -p 6379 -a redispassword
 ```
+
 
