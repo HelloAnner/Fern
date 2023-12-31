@@ -44,7 +44,20 @@ cmd + shift + s 格式化md格式
 
 ### 功能
 
-callout ： [callout标注块 | obsidian文档咖啡豆版](https://coffeetea.top/zh/markdown/callout.html)
+- callout ： [callout标注块 | obsidian文档咖啡豆版](https://coffeetea.top/zh/markdown/callout.html)
+	- note
+	- abstract, summary, tldr
+	- info, todo
+	- tip, hint, important
+	- success, check, done
+	- question, help, faq
+	- warning, caution, attention
+	- failure, fail, missing
+	- danger, error
+	- bug
+	- example
+	- quote, cite
+
 
 ### 思考
 
