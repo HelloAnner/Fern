@@ -41,3 +41,5 @@
 - 获取有序集合中指定成员的排名：`ZRANK key member`
 - 获取有序集合中成员数量：`ZCARD key`
 - 获取有序集合中指定成员的分数：`ZSCORE key member`
+
+- [ ]  复习 Redis 基础命令行 (@2024-01-16)
