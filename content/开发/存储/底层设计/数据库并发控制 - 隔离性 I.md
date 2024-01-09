@@ -16,6 +16,13 @@
 
 2PL：两段式加锁 - 注意和2PC区分 ， 类似于读写锁 ， 写必须等到读结束，读必须等到写释放。
 
+Mysql 查询默认的隔离级别：
+```
+查看系统隔离级别：select @@global.tx_isolation;
+查看会话隔离级别(5.0以上版本)：select @@tx_isolation;
+查看会话隔离级别(8.0以上版本)：select @@transaction_isolation;
+```
+
 ### MVCC
 
 因为数据库的事务时间是没有限制的，并且事务存在嵌套的特征，导致2PL性能非常的不稳定。

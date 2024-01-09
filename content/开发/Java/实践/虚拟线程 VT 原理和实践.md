@@ -96,6 +96,43 @@ executorService.submit(() -> {
 });
 ```
 
+
+```java
+public class VirtualThreadTest {
+    public static void main(String[] args) throws Exception {
+        long t = System.currentTimeMillis();
+        ExecutorService vthreads = Executors.newVirtualThreadPerTaskExecutor();
+        System.out.println(test(vthreads));
+        System.out.println(String.format("Virtual Thread spend %d ms", System.currentTimeMillis() - t));
+ 
+        t = System.currentTimeMillis();
+        ExecutorService osthreads = Executors.newFixedThreadPool(1000);
+        System.out.println(test(osthreads));
+        System.out.println(String.format("OS Thread spend %d ms", System.currentTimeMillis() - t));
+    }
+ 
+ 
+    private static int test(ExecutorService executorService) throws Exception{
+        AtomicInteger count = new AtomicInteger(0);
+        IntStream.range(0, 10000).forEach(i -> {
+            executorService.submit(() -> {
+                Thread.sleep(Duration.ofSeconds(1));
+                count.incrementAndGet();
+                return i;
+            });
+        });
+        executorService.shutdown();
+        executorService.awaitTermination(1, TimeUnit.HOURS);
+        return count.get();
+    }
+}
+ 
+输出：
+10000
+Virtual Thread spend 1057 ms
+10000
+OS Thread spend 10140 ms
+```
 ### VT 实现原理
 
 虚拟线程是由 Java 虚拟机调度，而不是操作系统。虚拟线程占用空间小，同时使用轻量级的任务队列来调度虚拟线程，避免了线程间基于内核的上下文切换开销，因此可以极大量地创建和使用。

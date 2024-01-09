@@ -22,6 +22,10 @@ cmd + shift + e : 最近文件
 Î
 cmd + u : 下划线
 
+cmd + b : 黑体
+
+cmd + shift + x 添加删除快捷键 Toggle Strikethrough
+
 ctrl + cmd + c 插入代码块
 
 ctrl + cmd + m 插入数学块
