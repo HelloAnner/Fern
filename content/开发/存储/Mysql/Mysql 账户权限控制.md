@@ -49,13 +49,19 @@ show grants for kelly@'%';
 ### 创建一个用户 & 分配权限
 
 ```sql
-CREATE USER 'bnner'@'%' IDENTIFIED BY '1111';
+CREATE USER 'anner'@'%' IDENTIFIED BY '1111';
 
 # DML
-GRANT SELECT, INSERT, UPDATE, DELETE ON *.* TO 'bnner'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE ON *.* TO 'anner'@'%';
 
 # DDL
 GRANT CREATE, ALTER, DROP, INDEX ON *.* TO `anner`@`%`;
+
+// 允许局域网连接 (1130, "192.168.65.1' is not allowed to connect to this MySQL server")
+# 5版本
+GRANT ALL PRIVILEGES ON *.* TO 'anner'@'%' IDENTIFIED BY '1111' WITH GRANT OPTION;
+# 8 版本
+GRANT ALL PRIVILEGES ON *.* TO 'anner'@'%' WITH GRANT OPTION;
 
 FLUSH PRIVILEGES;
 ```

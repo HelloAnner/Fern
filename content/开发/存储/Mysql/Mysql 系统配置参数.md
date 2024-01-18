@@ -2,6 +2,30 @@
 ### Mysql 配置说明
 
 
+### my.cnf 配置
+
+```
+# 设置 binlog 
+general_log = 1
+general_log_file = /var/log/mysql/mysql.log
+log_error_verbosity = 2
+max_binlog_size = 100M
+
+# timeout 参数控制
+net_read_timeout = 600
+```
+
+
+### timeout
+
+connectTimeout： 连接超时是在建立数据库连接时等待的时间
+socketTimeout： 套接字超时是在读取数据时等待的时间，用于控制客户端从服务器读取数据的超时时间
+queryTimeout：服务端查询超时是执行查询操作时等待的时间
+
+net_read_timeout：客户端如果在指定的时间内没有接收到数据，服务器将断开与客户端的连接
+net_write_timeout：客户端如果在指定的时间内没有发送完所有数据，服务器将断开与客户端的连接
+
+
 ### max_allowed_packet
 
 mysql服务器端和客户端在一次传送数据包的过程当中最大允许的数据包大小

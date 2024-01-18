@@ -64,3 +64,7 @@ hibernate.minIdle=0
 - _create_: creates the schema, destroying previous data.
 - _create-drop_: drop the schema when the SessionFactory is closed explicitly, typically when the application is stopped.
 - _none_: does nothing with the schema, makes no changes to the database
+
+
+
+**Hibernate Druid 层面是不能控制类似数据库的读写超时时间的参数**

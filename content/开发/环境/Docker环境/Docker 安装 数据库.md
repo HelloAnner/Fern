@@ -1,18 +1,21 @@
 ### mysql
 
 ```shell
-docker pull mysql/mysql-server:latest
-docker run --name=mysql -d mysql/mysql-server:latest
-
-docker logs mysql // 查看密码
-
-ALTER USER 'root'@'localhost' IDENTIFIED BY '[newpassword]';
-
-// 允许局域网连接 (1130, "192.168.65.1' is not allowed to connect to this MySQL server")
-
-
+docker run --name mysql -p 3306:3306  -v /Users/anner/Docker/mysql/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=1111 -d mysql
 ```
 [[../../存储/Mysql/Mysql 账户权限控制|Mysql 账户权限控制]]
+
+如何修改数据库的配置文件：
+```
+/etc/my.cnf 
+/etc/mysql/my.cnf 
+/usr/etc/my.cnf 
+~/.my.cnf
+```
+
+
+*mysql/mysql-server 修改配置文件一直无法生效*
+
 
 ### sql server
 
