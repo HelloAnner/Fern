@@ -93,7 +93,7 @@ System.out.println(weakReference.get());
 
 <mark style="background: #BBFABBA6;">软引用或者弱引用，如果被强引用关联了，那么内存不足，或者 GC 的时候都不会被删除</mark>
 
-弱引用在很多地方都有用到，比如 [[ThreadLocal]] 、WeakHashMap
+弱引用在很多地方都有用到，比如 [[../并发/8. ThreadLocal]] 、WeakHashMap
 
 ### 虚引用
 
