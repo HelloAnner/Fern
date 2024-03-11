@@ -1,3 +1,7 @@
+```shell
+curl -O https://arthas.aliyun.com/arthas-boot.jar
+```
+
 ## [classloader](https://arthas.aliyun.com/doc/classloader.html)
 
 `classloader` 命令将 JVM 中所有的 classloader 的信息统计出来，并可以展示继承树，urls

@@ -68,3 +68,5 @@ hibernate.minIdle=0
 
 
 **Hibernate Druid 层面是不能控制类似数据库的读写超时时间的参数**
+[[../../Mysql/Mysql 系统配置参数|Mysql 系统配置参数]]
+
